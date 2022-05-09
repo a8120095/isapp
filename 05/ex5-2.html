@@ -12,6 +12,7 @@
     <script>
         function button1Pressed() {
             doInsert();
+            clearTweet();
         }
 
         async function doInsert() {
@@ -24,6 +25,11 @@
 
             document.getElementById('result').innerHTML = "tweetしました";
         }
+
+        async function clearTweet() {
+            document.getElementById('tf2').value = ""
+        }
+
     </script>
 
 </head>
