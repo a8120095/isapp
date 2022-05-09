@@ -15,6 +15,7 @@
         }
 
         async function doSelect() {
+            var search = document.getElementById('sea').innerHTML;
             var sql = 'select * from Tweets order by time desc limit 20';
             var objects = await osql.connect(sql);
             console.log(objects);
@@ -33,6 +34,7 @@
 
 <body>
     <h1>Tweets</h1>
+    <input type='text' id='sea'>
     <button onclick="button1Pressed()">X</button>
     <hr>
     <p id="result">xxxx</p>
