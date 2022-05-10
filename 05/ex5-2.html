@@ -50,21 +50,7 @@
             document.getElementById('result').innerHTML = "tweetしました";
 
 
-            var displaysql = 'select * from Tweets order by time desc limit 20';
-            var displayobjects = await osql.connect(displaysql);
-            var html = '';
-            html = html + '<table border = "1">';
-            for (var i = 0; i < displayobjects.length; i++) {
-                var object = displayobjects[i];
-                html = html + '<tr>';
-                html = html + '<td>' + object.id + '</td>';
-                html = html + '<td>' + object.name + '</td>';
-                html = html + '<td>' + object.tweet + '</td>';
-                html = html + '<td>' + object.time + '</td>';
-                html = html + '</tr>';
-            }
-            html = html + '</table>';
-            document.getElementById('result2').innerHTML = html;
+            display()
         }
 
         async function clearTweet() {
