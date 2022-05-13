@@ -2,6 +2,8 @@
 
 <html>
 
+
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -9,16 +11,41 @@
     <script type="text/javascript" src="../settings.js"></script>
     <script type="text/javascript" src="../osql.js"></script>
 
+
+
+
+
     <script>
+
+        window.onload = function () {
+
+            var username = sessionStorage.getItem('username');
+
+            console.log(username)
+
+            document.getElementById('name').innerHTML = username;
+
+
+
+
+        }
+
+
+
+
+
+
     </script>
 
 </head>
 
 <body>
     <h1>ユーザトップ</h1>
-    <p id="welcome">ようこそxxさん</p>
+    <p id="welcome">ようこそ<span id="name"></span>さん</p>
     <hr>
 
 </body>
+
+
 
 </html>
