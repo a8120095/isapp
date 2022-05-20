@@ -14,6 +14,16 @@
             execSelect();
         });
 
+        async function button1Pressed() {
+            var userid = document.getElementById('deleteid').value;
+            console.log(userid);
+
+            var deletesql = `delete from Users where id = "${userid}"`
+            var objects = await osql.connect(deletesql);
+
+            execSelect();
+        }
+
         async function execSelect() {
             var sql = 'select * from Users';
             var objects = await osql.connect(sql);
@@ -37,6 +47,13 @@
 
 <body>
     <h1>Users</h1>
+    <label>
+        ID:
+        <input type="text" id="deleteid" name="delete">
+        <button onclick="button1Pressed()">削除</button>
+    </label>
+
+
     <p id="result">xxxx</p>
 </body>
 
