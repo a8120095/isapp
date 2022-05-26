@@ -15,8 +15,8 @@
         $().ready(function () {
             var userid = sessionStorage.getItem('userid')
             console.log(userid)
-            var username = sessionStorage.getItem('username')
-            console.log(username)
+
+
             display()
             setInterval(display, 2000);
 
@@ -31,8 +31,7 @@
         }
 
         async function display() {
-            console.log(userid)
-            console.log(username)
+
             var displaysql = 'select * from Tweets order by time desc limit 20';
             var displayobjects = await osql.connect(displaysql);
             var html = '';
