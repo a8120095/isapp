@@ -13,9 +13,6 @@
 
 
         $().ready(function () {
-            var userid = sessionStorage.getItem('userid')
-            console.log(userid)
-
 
             display()
             setInterval(display, 2000);
@@ -50,6 +47,10 @@
         }
 
         async function doInsert() {
+
+            var userid = osql.getParam('userid');
+            var tweet = document.getElementById('tf2').value;
+            console.log(userid)
 
             var sql = `insert into Tweets (name, tweet, time) values("${userid}", "${tweet}", now());`;
             var objects = await osql.connect(sql);
