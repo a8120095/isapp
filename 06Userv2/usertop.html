@@ -26,6 +26,13 @@
 
             document.getElementById('name').innerHTML = username;
             document.getElementById('change').href = `update.html?userid=${userid}`;
+            document.getElementById('tweet').href = `tweet.html`;
+
+
+            sessionStorage.setItem('userid', userid)
+            sessionStorage.setItem('username', username)
+
+
 
 
 
@@ -46,6 +53,7 @@
     <h1>ユーザトップ</h1>
     <p id="welcome">ようこそ<span id="name"></span>さん</p>
     <a href="" id="change">ユーザー情報変更</a>
+    <a href="" id="tweet">Twitter</a>
     <hr>
 
 </body>
