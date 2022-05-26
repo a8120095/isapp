@@ -13,11 +13,8 @@
 
 
         $().ready(function () {
-
             display()
             setInterval(display, 2000);
-
-
         })
 
 
@@ -28,7 +25,6 @@
         }
 
         async function display() {
-
             var displaysql = 'select * from Tweets order by time desc limit 20';
             var displayobjects = await osql.connect(displaysql);
             var html = '';
@@ -47,7 +43,6 @@
         }
 
         async function doInsert() {
-
             var userid = osql.getParam('userid');
             var tweet = document.getElementById('tf2').value;
             console.log(userid)
@@ -57,7 +52,6 @@
             console.log(objects);
 
             document.getElementById('result').innerHTML = "tweetしました";
-
 
             display()
         }
