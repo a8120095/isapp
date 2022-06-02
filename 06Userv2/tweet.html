@@ -10,16 +10,22 @@
     <script type="text/javascript" src="../osql.js"></script>
 
     <script>
+        var userid;
 
 
         $().ready(function () {
             display()
             setInterval(display, 2000);
+            userid = osql.getParam('userid');
+            document.getElementById('tf1').value = userid;
         })
 
 
 
         function button1Pressed() {
+            var userid = osql.getParam('userid');
+            document.getElementById('tf1').value = userid;
+
             doInsert();
             clearTweet();
         }
@@ -43,7 +49,7 @@
         }
 
         async function doInsert() {
-            var userid = osql.getParam('userid');
+
             var tweet = document.getElementById('tf2').value;
             console.log(userid)
 
@@ -66,7 +72,9 @@
 
 <body>
     <h1>Tweets</h1>
+
     <br>
+    userid:<input id="tf1" value="" type="textfield" disabled>
     tweet:<input id="tf2" type="textfield">
     <button onclick="button1Pressed()">tweet</button>
     <br>
